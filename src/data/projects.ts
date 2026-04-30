@@ -9,7 +9,7 @@
 export interface Project {
   slug: string;
   url: string;
-  viz: 'blocs' | 'napptilius' | 'iusintegra' | 'vaivera' | 'xarop' | 'vueling';
+  viz: 'blocs' | 'napptilius' | 'iusintegra' | 'junglemows' | 'xarop' | 'landing';
   i18n: Record<'ca' | 'es' | 'en', { client: string; year: string; title: string; desc: string }>;
 }
 
@@ -81,24 +81,24 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'vaivera-disseny-dinteriors',
-    url: 'https://web.xarop.com/portfolio/vaivera-disseny-dinteriors/',
-    viz: 'vaivera',
+    slug: 'junglemows-com',
+    url: 'http://localhost:4000/portfolio/junglemows-com/',
+    viz: 'junglemows',
     i18n: {
       ca: {
-        client: "Estudi d'interiors", year: '2025',
-        title: 'Vaivera',
-        desc: 'Presència digital com a catàleg dinàmic, amb un desenvolupament frontend centrat en el detall visual.',
+        client: 'Botiga online', year: '2024',
+        title: 'Junglemows',
+        desc: 'Ecommerce amb alt volum de tràfic construït amb WordPress, optimitzat per a la conversió i l\'escalabilitat.',
       },
       es: {
-        client: 'Estudio de interiores', year: '2025',
-        title: 'Vaivera',
-        desc: 'Presencia digital como catálogo dinámico, con un desarrollo frontend centrado en el detalle visual.',
+        client: 'Tienda online', year: '2024',
+        title: 'Junglemows',
+        desc: 'Ecommerce con alto volumen de tráfico construido con WordPress, optimizado para la conversión y la escalabilidad.',
       },
       en: {
-        client: 'Interior design studio', year: '2025',
-        title: 'Vaivera',
-        desc: 'A digital presence as a dynamic catalogue, with frontend development focused on visual detail.',
+        client: 'Online store', year: '2024',
+        title: 'Junglemows',
+        desc: 'High-traffic ecommerce built with WordPress, optimised for conversion and scalability.',
       },
     },
   },
@@ -125,24 +125,24 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'frontend-engineer-vueling-airlines-newshore',
-    url: 'https://web.xarop.com/portfolio/frontend-engineer-vueling-airlines-newshore/',
-    viz: 'vueling',
+    slug: 'pott-landing',
+    url: 'https://web.xarop.com/portfolio/landing/',
+    viz: 'landing',
     i18n: {
       ca: {
-        client: 'Newshore · Vueling', year: '2018',
-        title: 'Vueling Airlines',
-        desc: "Interfícies d'alt tràfic i webapps amb components modulars, Design Systems i APIs REST en entorn SCRUM.",
+        client: 'Projecte propi', year: '2026',
+        title: 'Landing',
+        desc: 'One-pager construïda amb Astro 5 i TypeScript, sense frameworks JS, sistema de disseny multi-sabor i rutes multilingüe.',
       },
       es: {
-        client: 'Newshore · Vueling', year: '2018',
-        title: 'Vueling Airlines',
-        desc: 'Interfaces de alto tráfico y webapps con componentes modulares, Design Systems y APIs REST en entorno SCRUM.',
+        client: 'Proyecto propio', year: '2026',
+        title: 'Landing',
+        desc: 'One-pager construida con Astro 5 y TypeScript, sin frameworks JS, sistema de diseño multi-sabor y rutas multilingüe.',
       },
       en: {
-        client: 'Newshore · Vueling', year: '2018',
-        title: 'Vueling Airlines',
-        desc: 'High-traffic interfaces and web apps with modular components, design systems, and REST APIs in a SCRUM environment.',
+        client: 'Own project', year: '2026',
+        title: 'Landing',
+        desc: 'One-pager built with Astro 5 and TypeScript — no JS framework, multi-flavour design system, multilingual routing.',
       },
     },
   },

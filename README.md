@@ -2,13 +2,18 @@
 
 One-page site for **xarop.com** — built with [Astro 5](https://astro.build), zero JS framework, ~10 KB JS for behaviour only. Multi-flavour design system, CA / ES / EN, dark mode, GA4.
 
+**Live:** [xarop.com](https://xarop.com)
+
 ## Stack
 
 - **Astro 5** — static output, zero JS by default
+- **TypeScript** — i18n type system, data types, behaviour script
 - **Vanilla CSS** with design tokens + flavour palettes
 - **Asap** (self-hosted, OFL) for headings — drop the `.woff2` files in `public/fonts/`
 - **IntersectionObserver** for scroll reveals (zero dependency)
 - **GA4** wired through `PUBLIC_GA_ID` env var
+- **Bun** — package manager and CI runner
+- **GitHub Actions + FTP** — auto-deploy to xarop.com on push to `main`
 
 ## Features
 
@@ -95,21 +100,14 @@ git push -u origin main
 
 ## Deploy
 
-### Cloudflare Pages (recommended)
+Push to `main` → GitHub Actions builds with Bun and uploads `dist/` to `xarop.com` via FTP automatically.
 
-1. Push to `xarop/landing`.
-2. Cloudflare Pages → Create project → connect the repo.
-3. Framework preset: **Astro**. Build command: `npm run build`. Output dir: `dist`.
-4. Environment variable: `PUBLIC_GA_ID = G-8XCG02PLVB`.
-5. Custom domain: `xarop.com`.
+Secrets required in the repo settings:
 
-### Vercel
-
-Same idea — Vercel detects Astro automatically. Add `PUBLIC_GA_ID` in Project Settings → Environment Variables.
-
-### Netlify
-
-Connect the repo, build command `npm run build`, publish directory `dist`. Add `PUBLIC_GA_ID` in Site settings → Environment variables.
+| Secret | Value |
+|---|---|
+| `FTP_USERNAME` | FTP user for xarop.com |
+| `FTP_PASSWORD` | FTP password |
 
 ## License
 
