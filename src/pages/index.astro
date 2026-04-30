@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import Work from '../components/Work.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { translations } from '../i18n';
+
+const locale = 'ca' as const;
+const t = translations[locale];
+---
+<Base locale={locale} t={t}>
+  <Hero t={t} />
+  <Stats t={t} />
+  <Services t={t} />
+  <Process t={t} />
+  <Work locale={locale} t={t} />
+  <Faq t={t} />
+  <Cta t={t} />
+</Base>

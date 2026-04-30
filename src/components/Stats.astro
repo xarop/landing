@@ -1,0 +1,17 @@
+---
+import type { Translation } from '../i18n/types';
+interface Props { t: Translation }
+const { t } = Astro.props;
+---
+<section class="stats" aria-label="Statistics">
+  <div class="wrap">
+    <div class="stats__grid reveal-stagger">
+      {t.stats.map((s) => (
+        <div>
+          <div class="stat__num">{s.num}</div>
+          <div class="stat__label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

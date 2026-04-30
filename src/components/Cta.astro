@@ -1,0 +1,18 @@
+---
+import type { Translation } from '../i18n/types';
+interface Props { t: Translation }
+const { t } = Astro.props;
+---
+<section id="contacte" class="cta">
+  <div class="wrap">
+    <h2 class="cta__big reveal">
+      <Fragment set:html={t.cta.questionHtml} />
+      <a href="mailto:hola@xarop.com">hola@xarop.com</a>
+    </h2>
+    <p class="cta__sub reveal">{t.cta.sub}</p>
+    <div class="cta__row reveal">
+      <a href="mailto:hola@xarop.com" class="btn btn--primary">{t.cta.primary} <span class="arrow" aria-hidden="true">→</span></a>
+      <a href="#" class="btn btn--ghost">{t.cta.secondary}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+/* TEAM */
+
+  Founder & Engineer: xarop
+  Contact: hola [at] xarop.com
+  Site: https://xarop.com
+  LinkedIn: https://www.linkedin.com/in/xarop/
+  GitHub: https://github.com/xarop
+  From: Barcelona, Catalonia
+
+
+/* THANKS */
+
+  Astro — https://astro.build
+  Asap typeface — Omnibus-Type, SIL OFL 1.1
+  Anthropic Claude — for being a fast pair
+
+
+/* SITE */
+
+  Last update: 2026/04/30
+  Standards: HTML5, CSS3 custom properties, ES2022
+  Framework: Astro 5
+  Hosting: Cloudflare Pages
+  Components: Vanilla CSS + IntersectionObserver
+  Software: VS Code
+
+
+/* HUMANS */
+
+  La IA ajuda a anar més ràpid,
+  però la creativitat humana no té preu.
+
+  AI helps us move faster,
+  but human creativity is priceless.

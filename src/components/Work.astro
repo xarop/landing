@@ -1,0 +1,35 @@
+---
+import ProjectViz from './ProjectViz.astro';
+import { projects } from '../data/projects';
+import type { Locale, Translation } from '../i18n/types';
+
+interface Props { locale: Locale; t: Translation }
+const { locale, t } = Astro.props;
+---
+<section id="projectes" class="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-head__tag">{t.work.tag}</span>
+        <h2>{t.work.title}</h2>
+      </div>
+      <p class="sec-head__lead">{t.work.lead}</p>
+    </div>
+
+    <div class="work__grid reveal-stagger">
+      {projects.map((p) => {
+        const c = p.i18n[locale];
+        return (
+          <a class="project" href={p.url} target="_blank" rel="noopener">
+            <div class="project__visual">
+              <ProjectViz kind={p.viz} />
+            </div>
+            <div class="project__meta"><span>{c.client}</span><span>{c.year}</span></div>
+            <h3>{c.title}</h3>
+            <p class="project__desc">{c.desc}</p>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

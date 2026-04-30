@@ -1,0 +1,23 @@
+---
+import Logo from './Logo.astro';
+import type { Translation } from '../i18n/types';
+interface Props { t: Translation }
+const { t } = Astro.props;
+---
+<section class="hero">
+  <div class="wrap hero__inner">
+    <p class="hero__eyebrow reveal">{t.hero.eyebrow}</p>
+    <h1 class="hero__title reveal" set:html={t.hero.titleHtml} />
+    <p class="hero__lead reveal">{t.hero.lead}</p>
+    <div class="hero__cta reveal">
+      <a href="#contacte" class="btn btn--primary">
+        {t.hero.ctaPrimary}
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#projectes" class="btn btn--ghost">{t.hero.ctaSecondary}</a>
+    </div>
+  </div>
+  <div class="hero__giant" aria-hidden="true">
+    <Logo />
+  </div>
+</section>

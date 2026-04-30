@@ -1,0 +1,26 @@
+/* =========================================================
+   Flavours — change <html data-flavor="X"> to swap the accent.
+   Each flavour exposes --color-accent, --color-accent-deep,
+   --color-accent-soft. Default is "maduixa".
+   ========================================================= */
+[data-flavor="maduixa"]    { --color-accent: #FF0000; --color-accent-deep: #B80000; --color-accent-soft: #FFE5E5; }
+[data-flavor="nabiu"]      { --color-accent: #3B4CCA; --color-accent-deep: #2A3895; --color-accent-soft: #E5E8FA; }
+[data-flavor="gerd"]       { --color-accent: #CF255E; --color-accent-deep: #951B45; --color-accent-soft: #FBE5EE; }
+[data-flavor="menta"]      { --color-accent: #00A878; --color-accent-deep: #007856; --color-accent-soft: #DEF5EE; }
+[data-flavor="llimona"]    { --color-accent: #D4A300; --color-accent-deep: #957300; --color-accent-soft: #FAF1D6; }
+[data-flavor="taronja"]    { --color-accent: #FF6B35; --color-accent-deep: #B84B25; --color-accent-soft: #FFE8DE; }
+[data-flavor="regalessia"] { --color-accent: #1A1A1A; --color-accent-deep: #000000; --color-accent-soft: #E8E8EA; }
+
+/* Regalessia inverts in dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])[data-flavor="regalessia"] {
+    --color-accent: #FAFAFA;
+    --color-accent-deep: #FFFFFF;
+    --color-accent-soft: #232327;
+  }
+}
+:root[data-theme="dark"][data-flavor="regalessia"] {
+  --color-accent: #FAFAFA;
+  --color-accent-deep: #FFFFFF;
+  --color-accent-soft: #232327;
+}

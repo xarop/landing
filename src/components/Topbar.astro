@@ -1,0 +1,73 @@
+---
+import Logo from './Logo.astro';
+import type { Locale, Translation } from '../i18n/types';
+import { localePath, localeLabel } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  t: Translation;
+}
+const { locale, t } = Astro.props;
+const locales: Locale[] = ['ca', 'es', 'en'];
+---
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a href={localePath[locale]} class="topbar__logo" aria-label="xarop">
+      <Logo />
+    </a>
+
+    <nav class="topbar__nav" id="primary-nav" aria-label="Primary">
+      <a href="#serveis">{t.nav.services}</a>
+      <a href="#proces">{t.nav.process}</a>
+      <a href="#projectes">{t.nav.work}</a>
+      <a href="#faq">{t.nav.faq}</a>
+      <a href="https://web.xarop.com/" target="_blank" rel="noopener">{t.nav.about} ↗</a>
+      <a href="#contacte">{t.nav.contact}</a>
+    </nav>
+
+    <div class="topbar__tools">
+      <div class="popover popover--lang">
+        <button class="popover__trigger" type="button" aria-expanded="false" aria-controls="lang-panel" aria-label={t.nav.language}>
+          <span data-lang-current>{localeLabel[locale]}</span>
+          <span class="caret" aria-hidden="true"></span>
+        </button>
+        <div id="lang-panel" class="lang popover__panel" role="group" aria-label={t.nav.language}>
+          {locales.map((loc) => (
+            <Fragment>
+              <a
+                href={localePath[loc]}
+                aria-current={loc === locale ? 'true' : 'false'}
+                data-lang={loc}
+              >{localeLabel[loc]}</a>
+              {loc !== 'en' && <span aria-hidden="true">·</span>}
+            </Fragment>
+          ))}
+        </div>
+      </div>
+
+      <div class="popover popover--flavors">
+        <button class="popover__trigger" type="button" aria-expanded="false" aria-controls="flavors-panel" aria-label={t.nav.flavor}>
+          <span class="flavor-dot" aria-hidden="true"></span>
+        </button>
+        <div id="flavors-panel" class="flavors popover__panel" role="group" aria-label={t.nav.flavor}>
+          <button class="flavor flavor--maduixa"    data-flavor="maduixa"    aria-pressed="true"  aria-label="maduixa"></button>
+          <button class="flavor flavor--nabiu"      data-flavor="nabiu"      aria-pressed="false" aria-label="nabiu"></button>
+          <button class="flavor flavor--gerd"       data-flavor="gerd"       aria-pressed="false" aria-label="gerd"></button>
+          <button class="flavor flavor--menta"      data-flavor="menta"      aria-pressed="false" aria-label="menta"></button>
+          <button class="flavor flavor--llimona"    data-flavor="llimona"    aria-pressed="false" aria-label="llimona"></button>
+          <button class="flavor flavor--taronja"    data-flavor="taronja"    aria-pressed="false" aria-label="taronja"></button>
+          <button class="flavor flavor--regalessia" data-flavor="regalessia" aria-pressed="false" aria-label="regalessia"></button>
+        </div>
+      </div>
+
+      <button class="theme-toggle" aria-label={t.nav.theme}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label={t.nav.menu}>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

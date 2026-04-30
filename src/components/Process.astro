@@ -1,0 +1,27 @@
+---
+import type { Translation } from '../i18n/types';
+interface Props { t: Translation }
+const { t } = Astro.props;
+---
+<section id="proces" class="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="sec-head__tag">{t.process.tag}</span>
+        <h2>{t.process.title}</h2>
+      </div>
+      <p class="sec-head__lead">{t.process.lead}</p>
+    </div>
+
+    <div class="process__steps reveal-stagger">
+      {t.process.steps.map((step) => (
+        <div class="step">
+          <div class="step__num">{step.num}</div>
+          <h3>{step.title}</h3>
+          <p>{step.desc}</p>
+          <span class="step__time">{step.time}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
