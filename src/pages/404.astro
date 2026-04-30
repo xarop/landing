@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { translations } from '../i18n';
+
+const locale = 'ca' as const;
+const t = translations[locale];
+---
+<Base locale={locale} t={t}>
+  <section class="notfound">
+    <div class="wrap notfound__inner">
+      <p class="notfound__eyebrow">404</p>
+      <h1 class="notfound__title">Pàgina no trobada.</h1>
+      <p class="notfound__lead">
+        Aquesta adreça no existeix. Potser ha canviat, o hi ha una errada a l'enllaç.
+      </p>
+      <a href="/" class="btn btn--primary">
+        Tornar a l'inici
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .notfound__inner {
+    padding-block: var(--s-8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-3);
+  }
+
+  .notfound__eyebrow {
+    font-size: var(--type-display);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin: 0;
+  }
+
+  .notfound__title {
+    font-size: var(--type-h1);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .notfound__lead {
+    font-size: var(--type-body);
+    color: var(--color-fg-soft);
+    max-width: 40ch;
+    margin: 0;
+  }
+</style>

@@ -11,6 +11,7 @@ One-page site for **xarop.com** — built with [Astro 5](https://astro.build), z
 - **Vanilla CSS** with design tokens + flavour palettes
 - **Asap** (self-hosted, OFL) for headings — drop the `.woff2` files in `public/fonts/`
 - **IntersectionObserver** for scroll reveals (zero dependency)
+- **@astrojs/sitemap** — auto-generates `sitemap-index.xml` on build
 - **GA4** wired through `PUBLIC_GA_ID` env var
 - **Bun** — package manager and CI runner
 - **GitHub Actions + FTP** — auto-deploy to xarop.com on push to `main`
@@ -21,19 +22,21 @@ One-page site for **xarop.com** — built with [Astro 5](https://astro.build), z
 - Dark / light theme toggle (auto + manual override) — persists in `localStorage`
 - Hamburger drawer + popover lang/flavor switchers on mobile (hover/tap)
 - i18n routing CA (default) · ES (`/es/`) · EN (`/en/`)
+- Custom 404 page (`/404.html`) served via Apache `ErrorDocument`
 - 6 portfolio cards with inline SVG visuals (no external images)
 - Inline contact form (name, email, subject dropdown, optional message) → `contact.php` AJAX
+- Auto-generated sitemap (`/sitemap-index.xml`)
 - Subtle scroll reveals, prefers-reduced-motion respected
 - Sticky topbar, 2-state hamburger animation, accessible focus rings
 
 ## Run it
 
 ```bash
-npm install
+bun install
 cp .env.example .env       # adjust PUBLIC_GA_ID if needed
-npm run dev                # http://localhost:4321
-npm run build              # → dist/
-npm run preview            # preview the static build
+bun dev                    # http://localhost:4321
+bun run build              # → dist/
+bun run preview            # preview the static build
 ```
 
 ## Add the Asap font (one-time)
@@ -56,12 +59,14 @@ If `PUBLIC_GA_ID` is unset, the GA tag is omitted entirely (handy for dev).
 landing/
 ├── astro.config.mjs        # i18n routes, site URL
 ├── public/
+│   ├── .htaccess             # ErrorDocument 404 /404.html
 │   ├── favicon.svg
 │   ├── robots.txt
 │   └── fonts/              # drop Asap .woff2 here
 ├── src/
 │   ├── pages/
 │   │   ├── index.astro       # /        (CA, default)
+│   │   ├── 404.astro         # /404.html
 │   │   ├── es/index.astro    # /es/
 │   │   └── en/index.astro    # /en/
 │   ├── layouts/Base.astro
@@ -83,19 +88,6 @@ landing/
 │   ├── scripts/behaviour.ts  # popovers, hamburger, reveals, theme, flavor, form AJAX
 │   └── styles/{tokens,flavors,global}.css
 └── package.json
-```
-
-## Push to github.com/xarop/landing
-
-From inside this folder:
-
-```bash
-git init
-git add .
-git commit -m "feat: initial landing"
-git branch -M main
-git remote add origin https://github.com/xarop/landing.git
-git push -u origin main
 ```
 
 ## Deploy
