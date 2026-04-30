@@ -20,7 +20,7 @@ export const en: Translation = {
   },
   hero: {
     eyebrow: 'Development studio · Barcelona',
-    titleHtml: 'Bespoke websites<br>and apps,<br>in <em>weeks</em>.',
+    titleHtml: 'Websites<br>and apps,<br>in <em>weeks</em>.',
     lead:
       'A small agency that uses AI to build digital products fast, well, and without tech debt. Pick the flavor you like best.',
     ctaPrimary: 'Start a project',

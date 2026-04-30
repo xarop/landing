@@ -1,64 +1,63 @@
 # DESIGN.md
 
-## Xarop Landing - Diseño
+## Xarop Landing - Design
 
-### Estructura general
-- Proyecto basado en Astro.
-- Estructura de carpetas clara: `src/components`, `src/pages`, `src/styles`, etc.
-- Uso de layouts para consistencia visual.
+### General Structure
+- Project based on Astro.
+- Clear folder structure: `src/components`, `src/pages`, `src/styles`, etc.
+- Use of layouts for visual consistency.
 
-### Principios de diseño
-- Minimalismo y claridad visual.
-- Paleta de colores coherente con la marca Xarop.
-- Tipografía legible y jerarquía clara.
-- Responsive: diseño adaptativo para móvil, tablet y escritorio.
+### Design Principles
+- Minimalism and visual clarity.
+- Color palette consistent with Xarop branding.
+- Readable typography and clear hierarchy.
+- Responsive: adaptive design for mobile, tablet, and desktop.
 
-### Componentes principales
-- **Hero**: Mensaje principal y llamada a la acción.
-- **Cta**: Botón destacado para conversión.
-- **Faq**: Preguntas frecuentes.
-- **Footer**: Información de contacto y enlaces.
-- **Topbar**: Navegación principal.
+### Main Components
+- **Hero**: Main message and call to action.
+- **Cta**: Highlighted button for conversion.
+- **Faq**: Frequently asked questions.
+- **Footer**: Contact info and links.
+- **Topbar**: Main navigation.
 
-### Accesibilidad
-- Contraste suficiente en textos y botones.
-- Navegación por teclado y etiquetas ARIA donde sea necesario.
+### Accessibility
+- Sufficient contrast in text and buttons.
+- Keyboard navigation and ARIA labels where needed.
 
-### Internacionalización
-- Archivos de idioma en `src/i18n/`.
-- Soporte para ca, es, en.
+### Internationalization
+- Language files in `src/i18n/`.
+- Support for ca, es, en.
 
+### Colors & Flavors
+- Neutral base palette defined in `tokens.css` (backgrounds, text, lines).
+- Flavor system in `flavors.css` for brand accents:
+  - maduixa: #FF0000 (red)
+  - nabiu: #3B4CCA (blue)
+  - gerd: #CF255E (pink)
+  - menta: #00A878 (green)
+  - llimona: #D4A300 (yellow)
+  - taronja: #FF6B35 (orange)
+  - regalessia: #1A1A1A (black, inverts in dark mode)
+- Each flavor defines: `--color-accent`, `--color-accent-deep`, `--color-accent-soft`.
+- Change flavor with `<html data-flavor="X">`.
 
-### Colores y Sabores
-- Paleta base neutra definida en `tokens.css` (fondos, textos, líneas).
-- Sistema de sabores (flavors) en `flavors.css` para acentos de marca:
-	- maduixa: #FF0000 (rojo)
-	- nabiu: #3B4CCA (azul)
-	- gerd: #CF255E (rosa)
-	- menta: #00A878 (verde)
-	- llimona: #D4A300 (amarillo)
-	- taronja: #FF6B35 (naranja)
-	- regalessia: #1A1A1A (negro, invierte en dark mode)
-- Cada sabor define: `--color-accent`, `--color-accent-deep`, `--color-accent-soft`.
-- Cambia el sabor con `<html data-flavor="X">`.
+### Typography
+- **Primary:** Asap (self-hosted, weights 400, 500, 700)
+  - Downloaded from Google Fonts and served from `/fonts/`.
+  - Declared in `global.css` via `@font-face`.
+- **Secondary:**
+  - Sans-serif: system-ui, Segoe UI, Inter
+  - Serif: Georgia, Newsreader
+  - Monospace: JetBrains Mono, SF Mono, Menlo
+- Hierarchy:
+  - Headings: var(--font-headings) → Asap
+  - Body text: var(--font-sans)
 
-### Tipografías
-- **Principal:** Asap (self-hosted, pesos 400, 500, 700)
-	- Descargada de Google Fonts y servida desde `/fonts/`.
-	- Declarada en `global.css` vía `@font-face`.
-- **Secundarias:**
-	- Sans-serif: system-ui, Segoe UI, Inter
-	- Serif: Georgia, Newsreader
-	- Monospace: JetBrains Mono, SF Mono, Menlo
-- Jerarquía:
-	- Títulos: var(--font-headings) → Asap
-	- Texto base: var(--font-sans)
-
-### Estilos
-- Variables CSS en `src/styles/tokens.css`.
-- Estilos globales en `src/styles/global.css`.
-- Tematización sencilla para futuros cambios de branding.
+### Styles
+- CSS variables in `src/styles/tokens.css`.
+- Global styles in `src/styles/global.css`.
+- Simple theming for future branding changes.
 
 ---
 
-Este documento debe actualizarse con cada cambio relevante en el diseño o estructura visual del proyecto.
+Update this document with every relevant change in the design or visual structure of the project.

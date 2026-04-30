@@ -33,16 +33,18 @@ const locales: Locale[] = ['ca', 'es', 'en'];
           <span class="caret" aria-hidden="true"></span>
         </button>
         <div id="lang-panel" class="lang popover__panel" role="group" aria-label={t.nav.language}>
-          {locales.map((loc) => (
-            <Fragment>
-              <a
-                href={localePath[loc]}
-                aria-current={loc === locale ? 'true' : 'false'}
-                data-lang={loc}
-              >{localeLabel[loc]}</a>
-              {loc !== 'en' && <span aria-hidden="true">·</span>}
-            </Fragment>
-          ))}
+          <div class="lang__row">
+            {locales.map((loc, idx) => (
+              <Fragment>
+                <a
+                  href={localePath[loc]}
+                  aria-current={loc === locale ? 'true' : 'false'}
+                  data-lang={loc}
+                >{localeLabel[loc]}</a>
+                {idx < locales.length - 1 && <span class="lang__sep" aria-hidden="true">·</span>}
+              </Fragment>
+            ))}
+          </div>
         </div>
       </div>
 
