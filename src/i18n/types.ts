@@ -39,6 +39,14 @@ export interface Translation {
     lead: string;
     items: { q: string; a: string }[];
   };
+  contact: {
+    name: string;
+    email: string;
+    subject: string;
+    subjectOptions: string[];
+    message: string;
+    send: string;
+  };
   cta: { questionHtml: string; sub: string; primary: string; secondary: string };
   footer: { rights: string };
 }

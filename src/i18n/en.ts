@@ -46,10 +46,10 @@ export const en: Translation = {
       },
       {
         num: '/02',
-        title: 'Apps and SaaS',
+        title: 'Web migrations',
         desc:
-          'Full web products. Auth, subscriptions, dashboards, multi-tenant. Stripe, Supabase, Postgres. No magic: a proven stack.',
-        tags: ['React', 'Stripe', 'Postgres'],
+          'From WordPress to modern tech. Break free from Elementor and plugins: a lightweight, fast, debt-free architecture.',
+        tags: ['Astro', 'Next.js', 'WordPress'],
       },
       {
         num: '/03',
@@ -96,6 +96,20 @@ export const en: Translation = {
       { q: 'What happens after launch?', a: 'Three months of warranty included. Then you can subscribe to monthly support or go solo.' },
       { q: "Why 'xarop'?", a: "Because every client has a different flavor. We pick the brand palette and product tone like picking a syrup ('xarop' in Catalan)." },
     ],
+  },
+  contact: {
+    name: 'Name',
+    email: 'Email',
+    subject: 'Subject',
+    subjectOptions: [
+      'Request a quote',
+      'Request maintenance',
+      'Hire for a project',
+      'Migrate from WordPress to modern tech',
+      'Other enquiry',
+    ],
+    message: 'Message (optional)',
+    send: 'Send',
   },
   cta: {
     questionHtml: 'Have a project?<br>',

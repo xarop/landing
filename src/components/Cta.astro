@@ -1,20 +1,43 @@
 ---
 import type { Translation } from '../i18n/types';
-import ContactModal from './ContactModal.astro';
 interface Props { t: Translation }
 const { t } = Astro.props;
 ---
 <section id="contacte" class="cta">
   <div class="wrap">
-    <h2 class="cta__big reveal">
-      <Fragment set:html={t.cta.questionHtml} />
-      <a href="mailto:hola@xarop.com">hola@xarop.com</a>
-    </h2>
-    <p class="cta__sub reveal">{t.cta.sub}</p>
-    <div class="cta__row reveal">
-      <button type="button" class="btn btn--primary" id="open-contact-modal">{t.cta.primary} <span class="arrow" aria-hidden="true">→</span></button>
-      <!--<a href="#" class="btn btn--ghost">{t.cta.secondary}</a>-->
+    <div class="cta__layout">
+      <div class="cta__text reveal">
+        <h2 class="cta__big">
+          <Fragment set:html={t.cta.questionHtml} />
+          <a href="mailto:hola@xarop.com">hola@xarop.com</a>
+        </h2>
+        <p class="cta__sub">{t.cta.sub}</p>
+      </div>
+      <form class="contact-form reveal" id="contact-form" method="POST" action="/contact.php" autocomplete="on">
+        <div class="contact-form__row">
+          <label>
+            <span>{t.contact.name}</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>{t.contact.email}</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+        <label>
+          <span>{t.contact.subject}</span>
+          <select name="subject" required>
+            <option value="" disabled selected>—</option>
+            {t.contact.subjectOptions.map(opt => <option value={opt}>{opt}</option>)}
+          </select>
+        </label>
+        <label>
+          <span>{t.contact.message}</span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary">{t.contact.send} <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="contact-form__feedback" id="contact-form-feedback" style="display:none;"></div>
+      </form>
     </div>
-    <ContactModal t={t} />
   </div>
 </section>

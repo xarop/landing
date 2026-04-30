@@ -46,10 +46,10 @@ export const ca: Translation = {
       },
       {
         num: '/02',
-        title: 'Apps i SaaS',
+        title: 'Migracions web',
         desc:
-          'Productes web complets. Auth, subscripcions, dashboards, multi-tenant. Stripe, Supabase, Postgres. Sense màgia: stack provat.',
-        tags: ['React', 'Stripe', 'Postgres'],
+          "De WordPress a tecnologies modernes. Allibera't d'Elementor i plugins: arquitectura lleugera, ràpida i sense deute tècnic.",
+        tags: ['Astro', 'Next.js', 'WordPress'],
       },
       {
         num: '/03',
@@ -96,6 +96,20 @@ export const ca: Translation = {
       { q: 'Què passa després del llançament?', a: 'Tres mesos de garantia inclosos. Després pots contractar suport mensual o anar pel teu compte.' },
       { q: "Per què 'xarop'?", a: "Perquè cada client té un sabor diferent. Triem la paleta i el to del producte com qui tria un xarop." },
     ],
+  },
+  contact: {
+    name: 'Nom',
+    email: 'Email',
+    subject: 'Assumpte',
+    subjectOptions: [
+      'Demanar pressupost',
+      'Demanar manteniment',
+      'Contractar per un projecte',
+      'Traspassar de WordPress a tecnologia moderna',
+      'Altra consulta',
+    ],
+    message: 'Missatge (opcional)',
+    send: 'Enviar',
   },
   cta: {
     questionHtml: 'Tens un projecte?<br>',

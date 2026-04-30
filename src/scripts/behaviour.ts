@@ -8,10 +8,7 @@ if (contactForm && contactFeedback) {
     contactFeedback.textContent = '';
     const formData = new FormData(contactForm);
     try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-      });
+      const res = await fetch(contactForm.action, { method: 'POST', body: formData });
       const data = await res.json();
       if (data.success) {
         contactFeedback.textContent = 'Missatge enviat!';
@@ -30,31 +27,6 @@ if (contactForm && contactFeedback) {
     }
   });
 }
-// ----- Contact Modal -----
-const contactModal = document.getElementById('contact-modal');
-const openContactBtn = document.getElementById('open-contact-modal');
-const closeContactBtn = contactModal?.querySelector('.modal__close');
-const modalBackdrop = contactModal?.querySelector('.modal__backdrop');
-
-function setContactModal(open: boolean) {
-  if (!contactModal) return;
-  contactModal.setAttribute('aria-hidden', open ? 'false' : 'true');
-  if (open) {
-    contactModal.focus();
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
-}
-
-openContactBtn?.addEventListener('click', () => setContactModal(true));
-closeContactBtn?.addEventListener('click', () => setContactModal(false));
-modalBackdrop?.addEventListener('click', () => setContactModal(false));
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && contactModal?.getAttribute('aria-hidden') === 'false') {
-    setContactModal(false);
-  }
-});
 /**
  * Site behaviour: flavor switcher, theme toggle, hamburger drawer,
  * lang/flavors popovers, scroll reveals.

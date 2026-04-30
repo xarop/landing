@@ -21,10 +21,10 @@ One-page site for **xarop.com** — built with [Astro 5](https://astro.build), z
 - Dark / light theme toggle (auto + manual override) — persists in `localStorage`
 - Hamburger drawer + popover lang/flavor switchers on mobile (hover/tap)
 - i18n routing CA (default) · ES (`/es/`) · EN (`/en/`)
-- 6 portfolio cards linking to `web.xarop.com/portfolio/...`
+- 6 portfolio cards with inline SVG visuals (no external images)
+- Inline contact form (name, email, subject dropdown, optional message) → `contact.php` AJAX
 - Subtle scroll reveals, prefers-reduced-motion respected
 - Sticky topbar, 2-state hamburger animation, accessible focus rings
-- Inline SVG visuals (no external images) — pesa quasi res
 
 ## Run it
 
@@ -74,13 +74,13 @@ landing/
 │   │   ├── Work.astro        # consumes data/projects.ts
 │   │   ├── ProjectViz.astro  # 6 abstract SVG visuals
 │   │   ├── Faq.astro
-│   │   ├── Cta.astro
+│   │   ├── Cta.astro         # contact section with inline form
 │   │   ├── Footer.astro
 │   │   ├── Logo.astro
 │   │   └── Analytics.astro   # GA4, conditional on PUBLIC_GA_ID
 │   ├── data/projects.ts
 │   ├── i18n/{ca,es,en,types,index}.ts
-│   ├── scripts/behaviour.ts  # popovers, hamburger, reveals, theme, flavor
+│   ├── scripts/behaviour.ts  # popovers, hamburger, reveals, theme, flavor, form AJAX
 │   └── styles/{tokens,flavors,global}.css
 └── package.json
 ```
