@@ -12,6 +12,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "astro": "^5.0.0",
+    "ftp-deploy": "^2.4.7",
+    "mdast-util-to-markdown": "^2.1.2",
+    "micromark": "^4.0.2",
+    "parse5": "^8.0.1",
+    "prismjs": "^1.30.0",
+    "shiki": "^4.0.2"
   }
 }
