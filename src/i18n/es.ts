@@ -20,7 +20,7 @@ export const es: Translation = {
   },
   hero: {
     eyebrow: 'Estudio de desarrollo · Barcelona',
-    titleHtml: 'Webs y apps<br>a medida,<br>en <em>semanas</em>.',
+    titleHtml: 'Webs y apps<br>a medida.',
     lead:
       'Somos una agencia pequeña que usa IA para construir productos digitales rápidos, bien hechos y sin deuda técnica. Elige el sabor que más te guste.',
     ctaPrimary: 'Empecemos un proyecto',
