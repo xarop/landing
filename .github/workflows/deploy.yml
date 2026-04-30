@@ -1,4 +1,4 @@
-name: Deploy to xarop.com/landing via FTP
+name: Deploy to xarop.com via FTP
 
 on:
   push:
@@ -32,4 +32,4 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./dist/
-          server-dir: /web/landing/
+          server-dir: /web/
