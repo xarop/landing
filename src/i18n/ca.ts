@@ -20,7 +20,7 @@ export const ca: Translation = {
   },
   hero: {
     eyebrow: 'Estudi de desenvolupament · Barcelona',
-    titleHtml: 'Webs i apps<br>a mida.',
+    titleHtml: 'Webs i apps<br><em>a mida</em>.',
     lead:
       "Som una agència petita que utilitza IA per construir productes digitals ràpids, ben fets i sense deute tècnic. Tria el sabor que més t'agradi.",
     ctaPrimary: 'Comencem un projecte',
