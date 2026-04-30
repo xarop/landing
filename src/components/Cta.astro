@@ -1,5 +1,6 @@
 ---
 import type { Translation } from '../i18n/types';
+import ContactModal from './ContactModal.astro';
 interface Props { t: Translation }
 const { t } = Astro.props;
 ---
@@ -11,8 +12,9 @@ const { t } = Astro.props;
     </h2>
     <p class="cta__sub reveal">{t.cta.sub}</p>
     <div class="cta__row reveal">
-      <a href="mailto:hola@xarop.com" class="btn btn--primary">{t.cta.primary} <span class="arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="btn btn--primary" id="open-contact-modal">{t.cta.primary} <span class="arrow" aria-hidden="true">→</span></button>
       <a href="#" class="btn btn--ghost">{t.cta.secondary}</a>
     </div>
+    <ContactModal t={t} />
   </div>
 </section>
