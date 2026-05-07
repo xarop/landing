@@ -9,30 +9,30 @@
 export interface Project {
   slug: string;
   url: string;
-  viz: 'blocs' | 'napptilius' | 'iusintegra' | 'junglemows' | 'xarop' | 'landing';
+  viz: 'blocs' | 'napptilius' | 'iusintegra' | 'junglemows' | 'xarop' | 'landing' | 'somespai' | 'paumirabet' | 'filmfestival';
   i18n: Record<'ca' | 'es' | 'en', { client: string; year: string; title: string; desc: string }>;
 }
 
 export const projects: Project[] = [
   {
-    slug: 'frontend-developer-desenvolupament-de-blocs',
-    url: 'https://web.xarop.com/portfolio/frontend-developer-desenvolupament-de-blocs/',
-    viz: 'blocs',
+    slug: 'app-somespai',
+    url: 'https://web.xarop.com/portfolio/app-somespai/',
+    viz: 'somespai',
     i18n: {
       ca: {
-        client: 'ByteBerry Studio', year: '2021',
-        title: 'Desenvolupament de blocs',
-        desc: "Estratègia tècnica i desenvolupament d'ecosistemes corporatius robustos amb arquitectures multilingües i backends a mida.",
+        client: 'Projecte propi', year: '2026',
+        title: 'Somespai',
+        desc: "Marketplace P2P d'espais a Barcelona i Catalunya. Minimalisme radical, geolocalització prioritària i orientació mobile-first.",
       },
       es: {
-        client: 'ByteBerry Studio', year: '2021',
-        title: 'Desarrollo de bloques',
-        desc: 'Estrategia técnica y desarrollo de ecosistemas corporativos robustos con arquitecturas multilingües y backends a medida.',
+        client: 'Proyecto propio', year: '2026',
+        title: 'Somespai',
+        desc: 'Marketplace P2P de espacios en Cataluña. Minimalismo radical, geolocalización prioritaria y orientación mobile-first.',
       },
       en: {
-        client: 'ByteBerry Studio', year: '2021',
-        title: 'Block development',
-        desc: 'Technical strategy and robust corporate ecosystems with multilingual architectures and bespoke backends.',
+        client: 'Own project', year: '2026',
+        title: 'Somespai',
+        desc: 'P2P spaces marketplace in Catalonia. Radical minimalism, priority geolocation, and mobile-first orientation.',
       },
     },
   },
@@ -81,28 +81,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'junglemows-com',
-    url: 'http://localhost:4000/portfolio/junglemows-com/',
-    viz: 'junglemows',
-    i18n: {
-      ca: {
-        client: 'Botiga online', year: '2024',
-        title: 'Junglemows',
-        desc: 'Ecommerce amb alt volum de tràfic construït amb WordPress, optimitzat per a la conversió i l\'escalabilitat.',
-      },
-      es: {
-        client: 'Tienda online', year: '2024',
-        title: 'Junglemows',
-        desc: 'Ecommerce con alto volumen de tráfico construido con WordPress, optimizado para la conversión y la escalabilidad.',
-      },
-      en: {
-        client: 'Online store', year: '2024',
-        title: 'Junglemows',
-        desc: 'High-traffic ecommerce built with WordPress, optimised for conversion and scalability.',
-      },
-    },
-  },
-  {
     slug: 'xarop-com',
     url: 'https://web.xarop.com/portfolio/xarop-com/',
     viz: 'xarop',
@@ -143,6 +121,94 @@ export const projects: Project[] = [
         client: 'Own project', year: '2026',
         title: 'Landing',
         desc: 'One-pager built with Astro 5 and TypeScript — no JS framework, multi-flavour design system, multilingual routing.',
+      },
+    },
+  },
+  {
+    slug: 'frontend-developer-desenvolupament-de-blocs',
+    url: 'https://web.xarop.com/portfolio/frontend-developer-desenvolupament-de-blocs/',
+    viz: 'blocs',
+    i18n: {
+      ca: {
+        client: 'ByteBerry Studio', year: '2025',
+        title: 'Desenvolupament de blocs',
+        desc: "Estratègia tècnica i desenvolupament d'ecosistemes corporatius robustos amb arquitectures multilingües i backends a mida.",
+      },
+      es: {
+        client: 'ByteBerry Studio', year: '2025',
+        title: 'Desarrollo de bloques',
+        desc: 'Estrategia técnica y desarrollo de ecosistemas corporativos robustos con arquitecturas multilingües y backends a medida.',
+      },
+      en: {
+        client: 'ByteBerry Studio', year: '2025',
+        title: 'Block development',
+        desc: 'Technical strategy and robust corporate ecosystems with multilingual architectures and bespoke backends.',
+      },
+    },
+  },
+  {
+    slug: 'pau-mirabet-direccio-dart-i-disseny',
+    url: 'https://web.xarop.com/portfolio/pau-mirabet-direccio-dart-i-disseny/',
+    viz: 'paumirabet',
+    i18n: {
+      ca: {
+        client: 'Pau Mirabet', year: '2024',
+        title: "Direcció d'art i disseny",
+        desc: "Desenvolupament de web minimalista per al portfolio de Pau Mirabet. Transicions fluïdes i arquitectura de la informació centrada en el visual.",
+      },
+      es: {
+        client: 'Pau Mirabet', year: '2024',
+        title: 'Dirección de arte y diseño',
+        desc: 'Desarrollo de web minimalista para el portfolio de Pau Mirabet. Transiciones fluidas y arquitectura de la información centrada en lo visual.',
+      },
+      en: {
+        client: 'Pau Mirabet', year: '2024',
+        title: 'Art and Design Direction',
+        desc: "Minimalist website development for Pau Mirabet's portfolio. Smooth transitions and visual-first information architecture.",
+      },
+    },
+  },
+  {
+    slug: 'junglemows-com',
+    url: 'http://localhost:4000/portfolio/junglemows-com/',
+    viz: 'junglemows',
+    i18n: {
+      ca: {
+        client: 'Botiga online', year: '2024',
+        title: 'Junglemows',
+        desc: 'Ecommerce amb alt volum de tràfic construït amb WordPress, optimitzat per a la conversió i l\'escalabilitat.',
+      },
+      es: {
+        client: 'Tienda online', year: '2024',
+        title: 'Junglemows',
+        desc: 'Ecommerce con alto volumen de tráfico construido con WordPress, optimizado para la conversión y la escalabilidad.',
+      },
+      en: {
+        client: 'Online store', year: '2024',
+        title: 'Junglemows',
+        desc: 'High-traffic ecommerce built with WordPress, optimised for conversion and scalability.',
+      },
+    },
+  },
+  {
+    slug: 'film-festival-web-redesign',
+    url: 'https://web.xarop.com/portfolio/film-festival-web-redesign/',
+    viz: 'filmfestival',
+    i18n: {
+      ca: {
+        client: 'Memorimage', year: '2023',
+        title: 'Film Festival Web',
+        desc: 'Redisseny de la pàgina web del Festival Internacional de Cinema de Reus, mantenint el backend i actualitzant el frontend.',
+      },
+      es: {
+        client: 'Memorimage', year: '2023',
+        title: 'Film Festival Web',
+        desc: 'Rediseño de la página web del Festival Internacional de Cine de Reus, manteniendo el backend y actualizando el frontend.',
+      },
+      en: {
+        client: 'Memorimage', year: '2023',
+        title: 'Film Festival website',
+        desc: 'Redesign of the Reus International Film Festival website, maintaining the backend and updating the frontend design.',
       },
     },
   },
