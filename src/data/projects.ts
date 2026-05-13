@@ -170,7 +170,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'junglemows-com',
-    url: 'http://localhost:4000/portfolio/junglemows-com/',
+    url: 'https://web.xarop.com/portfolio/junglemows-com/',
     viz: 'junglemows',
     i18n: {
       ca: {
