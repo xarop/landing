@@ -106,3 +106,5 @@ Secrets required in the repo settings:
 Site code: MIT.
 
 Asap typeface: SIL Open Font License 1.1.
+
+Developed by xarop.com
