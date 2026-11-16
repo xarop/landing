@@ -1,4 +1,4 @@
-name: Deploy to xarop.com via FTP
+name: Deploy to Cloudflare Pages
 
 on:
   push:
@@ -23,13 +23,11 @@ jobs:
       - name: Build project
         run: bun run build
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          server: xarop.com
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: ./dist/
-          server-dir: /
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          repo: xarop/landing
+          pageName: landing
+          directory: dist/
